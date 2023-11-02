@@ -46,5 +46,30 @@ else:
         print("Menu Ukuran Pizza:")
         for nomer, menu in ukuran_pizza.items():
             print(f"{nomer}. {menu['nama']} - Harga tambahan: Rp {menu['harga']}")
-        #( line 1-49 yang mengerjakan irsyad)
-            
+        #( line 1-49 yang mengerjakan irsyad)            
+
+        pilih_ukuran = int(input("Pilih ukuran pizza (1-3): "))
+        if pilih_ukuran not in ukuran_pizza:
+            print("Pilihan tidak valid.")
+        else:
+            # Input apakah pengguna ingin tambahan Extra Cheese
+            pilih_extra_cheese = input("Apakah Anda ingin tambahan Extra Cheese (ya/tidak): ")
+            harga_extra_cheese = 0
+
+            if pilih_extra_cheese.lower() == "ya":
+                # Harga Extra Cheese tergantung pada ukuran pizza yang dipilih
+                if pilih_ukuran == 1:
+                    harga_extra_cheese = 13363
+                elif pilih_ukuran == 2:
+                    harga_extra_cheese = 16364
+                elif pilih_ukuran == 3:
+                    harga_extra_cheese = 19091
+
+            # Menghitung total harga
+            total_harga = (
+                topping_pizza[pilih_toping]["harga"]
+                + crust_pizza[pilih_crust]["harga"]
+                + ukuran_pizza[pilih_ukuran]["harga"]
+                + harga_extra_cheese
+            )
+# (line 51 - 73 yang mengerjakan Andhika)
