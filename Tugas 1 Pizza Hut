@@ -1,0 +1,93 @@
+# Daftar menu dan harga
+topping_pizza = {
+    1: {"nama": "Frankfurter BBQ", "harga": 43636},
+    2: {"nama": "Meat Monsta", "harga": 43636},
+    3: {"nama": "Super Supreme", "harga": 43636},
+    4: {"nama": "Super Supreme Chicken", "harga": 43636},
+    5: {"nama": "Meat Lovers", "harga": 43636},
+    6: {"nama": "Chicken Lovers", "harga": 43636},
+}
+
+crust_pizza = {
+    1: {"nama": "Pan", "harga": 0},
+    2: {"nama": "Cheesy Bites", "harga": 13637},
+    3: {"nama": "StuffedCrust Cheese", "harga": 11819},
+    4: {"nama": "StuffedCrust Sausage", "harga": 9092},
+}
+
+ukuran_pizza = {
+    1: {"nama": "Personal", "harga": 0},
+    2: {"nama": "Regular", "harga": 57274},
+    3: {"nama": "Large", "harga": 89091},
+}
+
+# Input pilihan pengguna
+print("Selamat datang di layanan pemesanan pizza online!")
+
+# Menampilkan menu topping pizza
+print("Menu Topping Pizza:")
+for nomer, menu in topping_pizza.items():
+    print(f"{nomer}. {menu['nama']} - Harga: Rp {menu['harga']}")
+
+pilih_toping = int(input("Pilih topping pizza (1-6): "))
+if pilih_toping not in topping_pizza:
+    print("Pilihan tidak valid.")
+else:
+    # Menampilkan menu jenis crust
+    print("Menu Crust Pizza:")
+    for nomer, menu in crust_pizza.items():
+        print(f"{nomer}. {menu['nama']} - Harga tambahan: Rp {menu['harga']}")
+
+    pilih_crust = int(input("Pilih jenis crust (1-4): "))
+    if pilih_crust not in crust_pizza:
+        print("Pilihan tidak valid.")
+    else:
+        # Menampilkan menu ukuran pizza
+        print("Menu Ukuran Pizza:")
+        for nomer, menu in ukuran_pizza.items():
+            print(f"{nomer}. {menu['nama']} - Harga tambahan: Rp {menu['harga']}")
+
+        pilih_ukuran = int(input("Pilih ukuran pizza (1-3): "))
+        if pilih_ukuran not in ukuran_pizza:
+            print("Pilihan tidak valid.")
+        else:
+            # Input apakah pengguna ingin tambahan Extra Cheese
+            pilih_extra_cheese = input("Apakah Anda ingin tambahan Extra Cheese (ya/tidak): ")
+            harga_extra_cheese = 0
+
+            if pilih_extra_cheese.lower() == "ya":
+                # Harga Extra Cheese tergantung pada ukuran pizza yang dipilih
+                if pilih_ukuran == 1:
+                    harga_extra_cheese = 13363
+                elif pilih_ukuran == 2:
+                    harga_extra_cheese = 16364
+                elif pilih_ukuran == 3:
+                    harga_extra_cheese = 19091
+
+            # Menghitung total harga
+            total_harga = (
+                topping_pizza[pilih_toping]["harga"]
+                + crust_pizza[pilih_crust]["harga"]
+                + ukuran_pizza[pilih_ukuran]["harga"]
+                + harga_extra_cheese
+            )
+
+            # Menampilkan ringkasan pemesanan
+            print("\nRingkasan Pemesanan:")
+            print(f"Topping Pizza: {topping_pizza[pilih_toping]['nama']} - Harga: Rp {topping_pizza[pilih_toping]['harga']}")
+            print(f"Crust: {crust_pizza[pilih_crust]['nama']} - Harga tambahan: Rp {crust_pizza[pilih_crust]['harga']}")
+            print(f"Ukuran Pizza: {ukuran_pizza[pilih_ukuran]['nama']} - Harga tambahan: Rp {ukuran_pizza[pilih_ukuran]['harga']}")
+            if harga_extra_cheese > 0:
+                print(f"Extra Cheese: Rp {harga_extra_cheese}")
+            print(f"Total Harga: Rp {total_harga}")
+           
+            # Konfirmasi pemesanan
+            konfirmasi = input("Apakah Anda ingin konfirmasi pemesanan (ya/tidak): ")
+            if konfirmasi.lower() == "ya":
+                print("Terima kasih, pesanan Anda sudah dikonfirmasi!")
+            uang_dibayar = int(input("Jumlah uang yang Anda bayarkan: Rp. "))
+
+            kembalian = uang_dibayar - total_harga
+
+            print("Jumlah kembalian Anda: Rp.", kembalian)
+            
