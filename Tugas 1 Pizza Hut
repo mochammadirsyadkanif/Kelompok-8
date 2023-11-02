@@ -73,3 +73,31 @@ else:
                 + harga_extra_cheese
             )
 # (line 51 - 73 yang mengerjakan Andhika)
+
+if ukuran in harga_ukuran:
+    harga_ukuran_pilihan = harga_ukuran[ukuran]
+else:
+    print("Maaf, ukuran pizza yang Anda pilih tidak valid.")
+    exit()
+
+# Tambahan cheese
+xtra_cheese = input("Apakah Anda ingin Xtra Cheese? (Ya/Tidak): ")
+
+if xtra_cheese == "Ya":
+    harga_xtra_cheese = 13636
+else:
+    harga_xtra_cheese = 0
+
+# Hitung total harga
+total_harga = harga_topping_pilihan + harga_crust_pilihan + harga_ukuran_pilihan + harga_xtra_cheese
+
+print("Total harga pizza Anda: Rp.", total_harga)
+
+# Pembayaran
+uang_dibayar = int(input("Jumlah uang yang Anda bayarkan: Rp. "))
+
+kembalian = uang_dibayar - total_harga
+
+print("Jumlah kembalian Anda: Rp.", kembalian)
+print("Terima kasih telah membeli di Pizza Python!")
+#(line 73 - 103 yang mengerjakan Pratama)
