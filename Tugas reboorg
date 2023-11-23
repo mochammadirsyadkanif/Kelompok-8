@@ -40,7 +40,7 @@ for i in range(6):
     # Cek apakah sudah di garis finis setelah melompati rintangan
     if at_goal():
         break
-HURDLE 1 dan 2 yang mengerjakan Irsyat
+#HURDLE 1 dan 2 yang mengerjakan Irsyat
 
 
 #HURDLE 3
@@ -90,7 +90,7 @@ while not at_goal():
         move()
     else:
         jump_hurdle()
-HURDLE 3 dan 4 yang mengerjakan Andhika
+#HURDLE 3 dan 4 yang mengerjakan Andhika
 
 
 #MAZE
@@ -111,4 +111,4 @@ while not at_goal():
         move()
     else:
         turn_left()
-MAZE yang mengerjakan Pratama
+#MAZE yang mengerjakan Pratama
