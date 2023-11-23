@@ -33,7 +33,15 @@ def jump_hurdle():
     turn_right()
     move()
     turn_left()
+
+# Melompati rintangan sebanyak 6 kali
+for i in range(6):
+    jump_hurdle()
+    # Cek apakah sudah di garis finis setelah melompati rintangan
+    if at_goal():
+        break
 HURDLE 1 dan 2 yang mengerjakan Irsyat
+
 
 #HURDLE 3
 def turn_right():
@@ -83,6 +91,7 @@ while not at_goal():
     else:
         jump_hurdle()
 HURDLE 3 dan 4 yang mengerjakan Andhika
+
 
 #MAZE
 def turn_right():
