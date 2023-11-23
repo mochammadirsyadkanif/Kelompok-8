@@ -33,7 +33,7 @@ def jump_hurdle():
     turn_right()
     move()
     turn_left()
-
+HURDLE 1 dan 2 yang mengerjakan Irsyat
 
 #HURDLE 3
 def turn_right():
@@ -82,7 +82,7 @@ while not at_goal():
         move()
     else:
         jump_hurdle()
-
+HURDLE 3 dan 4 yang mengerjakan Andhika
 
 #MAZE
 def turn_right():
@@ -102,4 +102,4 @@ while not at_goal():
         move()
     else:
         turn_left()
-
+MAZE yang mengerjakan Pratama
